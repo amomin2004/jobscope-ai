@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Salary Predictor</title>
+</head>
+<body>
+    <h2>AI Job Salary Predictor</h2>
+    <form action="/predict" method="POST">
+        <label for="experience_level">Experience Level:</label>
+        <select name="experience_level">
+            <option value="0">Entry</option>
+            <option value="1">Mid</option>
+            <option value="2">Senior</option>
+            <option value="3">Executive</option>
+        </select><br><br>
+
+        <label for="company_size">Company Size:</label>
+        <select name="company_size">
+            <option value="0">Small</option>
+            <option value="1">Medium</option>
+            <option value="2">Large</option>
+        </select><br><br>
+
+        <label for="education_required">Education Level:</label>
+        <select name="education_required">
+            <option value="0">High School</option>
+            <option value="1">Bachelor</option>
+            <option value="2">Master</option>
+            <option value="3">PhD</option>
+        </select><br><br>
+
+        <label for="years_experience">Years of Experience:</label>
+        <input type="number" name="years_experience" required><br><br>
+
+        <label for="job_title">Job Title:</label>
+        <select name="job_title">
+            <option value="title_AI Architect">AI Architect</option>
+            <option value="title_AI Consultant">AI Consultant</option>
+            <option value="title_AI Product Manager">AI Product Manager</option>
+            <option value="title_AI Research Scientist">AI Research Scientist</option>
+            <option value="title_AI Software Engineer">AI Software Engineer</option>
+            <option value="title_AI Specialist">AI Specialist</option>
+            <option value="title_Autonomous Systems Engineer">Autonomous Systems Engineer</option>
+            <option value="title_Computer Vision Engineer">Computer Vision Engineer</option>
+            <option value="title_Data Analyst">Data Analyst</option>
+            <option value="title_Data Engineer">Data Engineer</option>
+            <option value="title_Data Scientist">Data Scientist</option>
+            <option value="title_Deep Learning Engineer">Deep Learning Engineer</option>
+            <option value="title_Head of AI">Head of AI</option>
+            <option value="title_ML Ops Engineer">ML Ops Engineer</option>
+            <option value="title_Machine Learning Engineer">Machine Learning Engineer</option>
+            <option value="title_Machine Learning Researcher">Machine Learning Researcher</option>
+            <option value="title_NLP Engineer">NLP Engineer</option>
+            <option value="title_Principal Data Scientist">Principal Data Scientist</option>
+            <option value="title_Research Scientist">Research Scientist</option>
+            <option value="title_Robotics Engineer">Robotics Engineer</option>
+        </select><br><br>
+
+        <label for="industry">Industry:</label>
+        <select name="industry">
+            <option value="industry_Technology">Technology</option>
+            <option value="industry_Finance">Finance</option>
+            <option value="industry_Healthcare">Healthcare</option>
+            <option value="industry_Automotive">Automotive</option>
+            <option value="industry_Consulting">Consulting</option>
+            <option value="industry_Education">Education</option>
+            <option value="industry_Energy">Energy</option>
+            <option value="industry_Gaming">Gaming</option>
+            <option value="industry_Government">Government</option>
+            <option value="industry_Manufacturing">Manufacturing</option>
+            <option value="industry_Media">Media</option>
+            <option value="industry_Real Estate">Real Estate</option>
+            <option value="industry_Retail">Retail</option>
+            <option value="industry_Telecommunications">Telecommunications</option>
+            <option value="industry_Transportation">industry_Transportation</option>
+     
+        </select><br><br>
+
+        <button type="submit">Predict Salary</button>
+    </form>
+
+    {% if prediction %}
+        <h3>Predicted Salary: ${{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
+
