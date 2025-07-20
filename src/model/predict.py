@@ -5,7 +5,7 @@ import joblib
 model = joblib.load('models/gradient_boosting_model.pkl')
 scaler = joblib.load('models/salary_scaler.pkl')
 
-# Defines the exact features used during training
+# Define features used in training (used to align test set)
 features_used = [
     'experience_level', 'company_size', 'education_required', 'years_experience',
     'industry_Automotive', 'industry_Consulting', 'industry_Education', 'industry_Energy',
@@ -20,23 +20,22 @@ features_used = [
     'title_NLP Engineer', 'title_Principal Data Scientist', 'title_Research Scientist', 'title_Robotics Engineer'
 ]
 
-# Load test data
+# Load processed X_test for predictions
 X_test = pd.read_csv('data/processed/X_test.csv')
-X_test = X_test[features_used]  # Ensure columns are aligned
+X_test_model_input = X_test[features_used]
 
-# Make scaled predictions
-pred_scaled = model.predict(X_test)
+# Predict scaled salaries
+pred_scaled = model.predict(X_test_model_input)
 
-# Prepare input for inverse_transform
+# Prepare for inverse scaling (salary was scaled with years_experience as a pair)
 dummy_input = pd.DataFrame({
     'years_experience': [0] * len(pred_scaled),
     'salary_usd': pred_scaled
 })
-
-# Inverse transform to get actual salary predictions
 inv_transformed = scaler.inverse_transform(dummy_input)
-actual_salaries = inv_transformed[:, 1]  # Extract only salary column
+actual_salaries = inv_transformed[:, 1]  # only salary column
 
-# Save final predictions
-pd.DataFrame(actual_salaries, columns=['Predicted_Salary']).to_csv('data/predictions/predictions.csv', index=False)
-print("Predictions saved to predictions.csv")
+X_test_human = pd.read_csv('data/processed/X_test_readable.csv')  # This will have 6000 rows
+X_test_human['Predicted_Salary'] = actual_salaries  # Lengths now match
+X_test_human.to_csv('data/predictions/final_predictions.csv', index=False)
+print("Final predictions saved with human-readable labels.")
