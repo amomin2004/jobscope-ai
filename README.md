@@ -1,3 +1,6 @@
+https://github.com/user-attachments/assets/e8b76f3d-dabd-4268-9ae2-d47e50541c96
+
+
 ## Overview
 
 JobScope-AI is an end-to-end project that combines **data analysis**, **machine learning**, and **web development** to predict estimated salaries for AI-related job roles. The app takes in job details such as title, company size, education level, and experience, and returns a salary prediction using trained machine learning models.
@@ -32,8 +35,3 @@ Each model was assessed using standard regression metrics:
 ### 🌐 Web Development
 - **Flask** – Python web framework for serving the model
 - **HTML/CSS** – frontend form and layout
-
-
-https://github.com/user-attachments/assets/e8b76f3d-dabd-4268-9ae2-d47e50541c96
-
-
