@@ -46,4 +46,3 @@ Each model was assessed using standard regression metrics:
    - source venv/bin/activate   # On Windows use: venv\Scripts\activate
 - **5. pip install -r requirements.txt**
 - **6. in terminal : python3 app/api.py**
-- 7. (If python3 does not work do python, vice versa)
