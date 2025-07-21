@@ -33,3 +33,7 @@ Each model was assessed using standard regression metrics:
 - **Flask** – Python web framework for serving the model
 - **HTML/CSS** – frontend form and layout
 
+
+https://github.com/user-attachments/assets/e8b76f3d-dabd-4268-9ae2-d47e50541c96
+
+
