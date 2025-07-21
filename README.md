@@ -1,10 +1,4 @@
-# 💼 JobScope-AI: AI Job Salary Predictor
-
-A machine learning web app to predict AI job salaries based on role, experience, education, and industry.
-
----
-
-## 🚀 Overview
+## Overview
 
 JobScope-AI is an end-to-end project that combines **data analysis**, **machine learning**, and **web development** to predict estimated salaries for AI-related job roles. The app takes in job details such as title, company size, education level, and experience, and returns a salary prediction using trained machine learning models.
 
