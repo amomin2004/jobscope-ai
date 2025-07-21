@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 import numpy as np
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder="templates", static_folder="static")
 
 # Load model and scaler
 model = joblib.load("models/gradient_boosting_model.pkl")
