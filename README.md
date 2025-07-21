@@ -35,3 +35,15 @@ Each model was assessed using standard regression metrics:
 ### 🌐 Web Development
 - **Flask** – Python web framework for serving the model
 - **HTML/CSS** – frontend form and layout
+
+---
+
+## Running Web App
+1. Clone the repo
+2. cd jobscope-ai
+3. setup virtual enviornment:
+   - python3 -m venv venv
+   - source venv/bin/activate   # On Windows use: venv\Scripts\activate
+5. pip install -r requirements.txt
+6. in terminal : python3 app/api.py
+7. (If python3 does not work do python, vice versa)
